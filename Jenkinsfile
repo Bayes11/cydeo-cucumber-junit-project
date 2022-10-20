@@ -5,9 +5,9 @@ node {
 
     stage('Run tests'){
         if(isUnix()){
-            sh "mvn clean test"
+            sh "mvn clean test -Dcucumber.filter.tags=\"@test\""
         } else {
-            bat "mvn clean test -Dcucumber.filter.tags=\"@test\" "
+            bat "mvn clean test -Dcucumber.filter.tags=\"@test\""
         }
 
     }
